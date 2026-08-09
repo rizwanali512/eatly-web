@@ -3,25 +3,95 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #f5f0e8;
+  --gold: #FFB800;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #0a0a0a;
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: rgba(255,184,0,0.35); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #FFB800; }
+
+/* ── Gold underline ── */
+.gold-underline { position: relative; display: inline-block; }
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 56px;
+  height: 2px;
+  background: linear-gradient(90deg, #FFB800, #E6A800);
+  border-radius: 9999px;
+}
+.gold-underline-center::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ── Outlined gold button ── */
+.btn-gold {
+  display: inline-flex;
+  border: 1px solid #FFB800;
+  color: #FFB800;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  transition: all 0.3s;
+}
+.btn-gold:hover {
+  background-color: #FFB800;
+  color: #0a0a0a;
+}
+
+/* ── Dark inputs ── */
+.input-dark {
+  width: 100%;
+  background-color: #141414;
+  border: 1px solid #252525;
+  color: #f5f0e8;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: all 0.3s;
+  border-radius: 0.5rem;
+}
+.input-dark:focus {
+  border-color: #FFB800;
+  box-shadow: 0 0 0 3px rgba(255, 184, 0, 0.08);
+}
+.input-dark::placeholder {
+  color: #7a7060;
+}
+
+/* ── Scrollbar hide ── */
+.scrollbar-hide { scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
+/* ── Gradient text ── */
+.text-gradient-yellow {
+  background: linear-gradient(135deg, #FFB800, #FFC533);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  .text-balance { text-wrap: balance; }
 }
