@@ -33,13 +33,6 @@ const featuredDishes = [
   { name: "Prawn Tempura",         price: "PKR 1,400", img: "https://picsum.photos/seed/prawn11/200/200" },
 ];
 
-const features = [
-  { icon: "🌆", title: "Rooftop Views",  desc: "Panoramic skyline & Margalla Hills" },
-  { icon: "🎶", title: "Live Ambiance",  desc: "Curated music every evening" },
-  { icon: "🍽️", title: "World Cuisine", desc: "50+ dishes from 8 global cuisines" },
-  { icon: "🎉", title: "Private Events", desc: "Birthdays, anniversaries & corporate" },
-];
-
 const signatures = [
   { name: "Moroccan Beef Steak",   desc: "Prime beef in North African spices, roasted veg & garlic mash",      price: "PKR 1,450", img: "https://picsum.photos/seed/steak1/600/400" },
   { name: "Chicken Parmo",         desc: "Crispy chicken breast with béchamel & melted cheese on a brioche bun", price: "PKR 1,649", img: "https://picsum.photos/seed/parmo2/600/400" },
